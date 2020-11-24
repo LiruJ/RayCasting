@@ -2,7 +2,7 @@
 #define RAY_H
 
 // Framework includes.
-#include <GLM/glm.hpp>
+#include <glm.hpp>
 
 /// <summary> Represents a ray with an origin and a direction. </summary>
 struct Ray

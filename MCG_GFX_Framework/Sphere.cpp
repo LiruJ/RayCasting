@@ -1,7 +1,7 @@
 #include "Sphere.h"
 
 // Framework includes.
-#include <GLM/gtx/norm.hpp>
+#include <gtx/norm.hpp>
 
 /// <summary> Calculates the colour of a certain point on the sphere. </summary>
 /// <param name="_intersection"> The point on the sphere for which to calculate the colour. </param>

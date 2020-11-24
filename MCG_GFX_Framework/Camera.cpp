@@ -1,7 +1,7 @@
 #include "Camera.h"
 
 // Framework includes.
-#include <GLM/gtc/matrix_transform.hpp>
+#include <gtc/matrix_transform.hpp>
 
 /// <summary> Creates a ray from the given screen position. </summary>
 /// <param name="_pixelPosition"> The pixel position on the screen. </param>

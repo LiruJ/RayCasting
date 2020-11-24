@@ -1,10 +1,12 @@
-
 #ifndef __MCG_MAIN__
 #define __MCG_MAIN__
 
+// SDL includes.
+#include <SDL.h>
+
 // The GLM library contains vector and matrix functions and classes for us to use
-#include <GLM/glm.hpp> // This is the main GLM header
-#include <GLM/gtc/matrix_transform.hpp> // This one lets us use matrix transformations
+#include <glm.hpp> // This is the main GLM header
+#include <gtc/matrix_transform.hpp> // This one lets us use matrix transformations
 
 // Forward declaration.
 class Game;
@@ -27,6 +29,8 @@ namespace MCG
 	/// The colour parameter ranges from 0 to 255. Values outside this range may give unpredictable results.
 	void DrawPixel( glm::ivec2 position, glm::ivec3 colour );
 
+	void DrawTexture(SDL_Texture* texture);
+
 	/// Displays graphics to screen and keeps window open until user requests exit (pressing escape key or closing window)
 	int ShowAndHold();
 
@@ -36,10 +40,6 @@ namespace MCG
 	/// For cleanly shutting down the graphics system
 	void Cleanup();
 
+	SDL_Renderer* GetRenderer();
 };
-
-
-
-
 #endif
-

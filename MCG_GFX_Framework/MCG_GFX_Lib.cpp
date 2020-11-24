@@ -1,5 +1,3 @@
-// This is the main SDL include file
-#include <SDL/SDL.h>
 // iostream is so we can output error messages to console
 #include <iostream>
 
@@ -10,7 +8,7 @@
 
 namespace MCG
 {
-	SDL_Renderer *_renderer;
+	SDL_Renderer* _renderer;
 	SDL_Window *_window;
 	glm::ivec2 _winSize;
 	unsigned int _lastTime;
@@ -61,7 +59,7 @@ bool MCG::Init( glm::ivec2 windowSize )
 	// When we create it we tell it which SDL_Window we want it to render to
 	// That renderer can only be used for this window
 	// (yes, we can have multiple windows - feel free to have a play sometime)
-	_renderer = SDL_CreateRenderer( _window, -1, 0 );
+	_renderer = SDL_CreateRenderer(_window, -1, 0);
 
 
 	if( !_renderer )
@@ -81,18 +79,24 @@ bool MCG::Init( glm::ivec2 windowSize )
 void MCG::SetBackground( glm::ivec3 colour )
 {
 	// Set the colour for drawing
-	SDL_SetRenderDrawColor( _renderer, colour.r, colour.g, colour.b, 255 );
+	SDL_SetRenderDrawColor(_renderer, colour.r, colour.g, colour.b, 255);
 	// Clear the entire screen to our selected colour
-	SDL_RenderClear( _renderer );
+	SDL_RenderClear(_renderer);
 
 }
 
 void MCG::DrawPixel( glm::ivec2 position, glm::ivec3 colour )
 {
 	// Set the colour for drawing
-	SDL_SetRenderDrawColor( _renderer, colour.r, colour.g, colour.b, 255 );
+	SDL_SetRenderDrawColor(_renderer, colour.r, colour.g, colour.b, 255);
 	// Draw our pixel
-	SDL_RenderDrawPoint( _renderer, position.x, position.y );
+	SDL_RenderDrawPoint(_renderer, position.x, position.y);
+	
+}
+
+void MCG::DrawTexture(SDL_Texture* texture)
+{
+	SDL_RenderCopy(_renderer, texture, NULL, NULL);
 }
 
 
@@ -104,7 +108,7 @@ bool MCG::ProcessFrame(Game& _game)
 	// This tells the renderer to actually show its contents to the screen
 	// This is specific to the SDL drawing commands. When we start with OpenGL we will need to use a different command here
 	// This is to do with something called 'double buffering', where we have an off-screen buffer that we draw to and then swap once we finish (this function is the 'swap')
-	SDL_RenderPresent( _renderer );
+	SDL_RenderPresent(_renderer);
 
 
 	SDL_Event incomingEvent;
@@ -195,6 +199,11 @@ void MCG::Cleanup()
 	SDL_Quit();
 }
 
+SDL_Renderer* MCG::GetRenderer()
+{
+	return _renderer;
+}
+
 
 int MCG::ShowAndHold()
 {
@@ -206,7 +215,7 @@ int MCG::ShowAndHold()
 	// This tells the renderer to actually show its contents to the screen
 	// This is specific to the SDL drawing commands. When we start with OpenGL we will need to use a different command here
 	// This is to do with something called 'double buffering', where we have an off-screen buffer that we draw to and then swap once we finish (this function is the 'swap')
-	SDL_RenderPresent( _renderer );
+	SDL_RenderPresent(_renderer);
 
 
 

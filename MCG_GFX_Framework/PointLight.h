@@ -2,7 +2,7 @@
 #define POINTLIGHT_H
 
 // Framework includes.
-#include <GLM/glm.hpp>
+#include <glm.hpp>
 
 // Data includes.
 #include "Colour.h"

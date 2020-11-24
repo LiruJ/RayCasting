@@ -2,7 +2,7 @@
 #define WORLD_H
 
 // Framework includes.
-#include <GLM/glm.hpp>
+#include <glm.hpp>
 
 // Data includes
 #include "Sphere.h"
@@ -32,7 +32,7 @@ private:
 	/// <summary> The camera used to draw the world. </summary>
 	Rendering::Camera m_camera;
 
-	void drawSection(uint16_t, uint16_t, Buffer&);
+	void drawSection(const uint8_t _threadNumber, const uint8_t _threadCount, Buffer& o_buffer);
 
 	void initialiseSpheres();
 };

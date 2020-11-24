@@ -2,7 +2,7 @@
 #define CAMERA_H
 
 // Framework includes.
-#include <GLM/glm.hpp>
+#include <glm.hpp>
 
 // Data includes.
 #include "Ray.h"

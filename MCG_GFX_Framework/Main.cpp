@@ -1,6 +1,6 @@
 // Framework includes.
 #include "MCG_GFX_Lib.h"
-#include <GLM/glm.hpp>
+#include <glm.hpp>
 
 // Data includes.
 #include "Game.h"

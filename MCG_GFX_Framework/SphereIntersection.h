@@ -2,7 +2,7 @@
 #define SPHEREINTERSECTION_H
 
 // Framework includes.
-#include <GLM/glm.hpp>
+#include <glm.hpp>
 
 // Typedef includes.
 #include <cmath>
